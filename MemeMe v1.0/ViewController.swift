@@ -15,7 +15,7 @@ struct Meme {
     var memedImage:UIImage
 }
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate,UITextFieldDelegate {
+UINavigationControllerDelegate {
 
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var bottomTextfield: UITextField!
@@ -25,15 +25,16 @@ UINavigationControllerDelegate,UITextFieldDelegate {
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    let memeTextDelegate=MemeTextDelegate()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        bottomTextfield.delegate = memeTextDelegate
-        topTextField.delegate = memeTextDelegate
+        topTextField.delegate = self
+        bottomTextfield.delegate = self
         
-        initTextField()
+        initTextField(text: "TOP", textField: topTextField)
+        initTextField(text: "BOTTOM", textField: bottomTextfield)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -50,31 +51,19 @@ UINavigationControllerDelegate,UITextFieldDelegate {
     }
     
 
-    func initTextField(){
-        topTextField.text="TOP"
-        topTextField.textAlignment = .center
-        
-        bottomTextfield.text="BOTTOM"
-        bottomTextfield.textAlignment = .center
-        
-        
-        let memeTextAttributes: [NSAttributedString.Key: Any] = [
-            NSAttributedString.Key.strokeColor: UIColor.black /* TODO: fill in appropriate UIColor */,
-            NSAttributedString.Key.foregroundColor: UIColor.white /* TODO: fill in appropriate UIColor */,
-            NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSAttributedString.Key.strokeWidth: -2.0 /* TODO: fill in appropriate Float */
+    func initTextField(text: String, textField: UITextField){
+        textField.text = text
+        textField.textAlignment = .center
+        textField.defaultTextAttributes = [
+            .strokeWidth: -2.0,
+            .strokeColor: UIColor.black,
+            .foregroundColor: UIColor.white,
+            .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
         ]
-        
-        topTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextfield.defaultTextAttributes = memeTextAttributes
     }
     
     @IBAction func pickImageFromAlbum(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
-        
+        pickImage(source: .photoLibrary)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -91,12 +80,16 @@ UINavigationControllerDelegate,UITextFieldDelegate {
     }
     
     @IBAction func pickFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
+        pickImage(source: .camera)
     }
     
+    func pickImage(source: UIImagePickerController.SourceType) {
+        let imagePicker = UIImagePickerController()
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = source
+        present(imagePicker, animated: true, completion: nil)
+    }
     
     @objc func subscribeToKeyboardNotifications() {
         
@@ -109,6 +102,7 @@ UINavigationControllerDelegate,UITextFieldDelegate {
     func unsubscribeFromKeyboardNotifications() {
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
@@ -148,6 +142,15 @@ UINavigationControllerDelegate,UITextFieldDelegate {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
         
         let controller = UIActivityViewController(activityItems: [meme] , applicationActivities: nil)
+        controller.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            if(success && error == nil){
+                self.dismiss(animated: true, completion: nil);
+            }
+            else if (error != nil){
+                print(error?.localizedDescription ?? "Error Happened !!")
+            }
+        };
         present(controller,animated: true,completion: nil)
     }
     

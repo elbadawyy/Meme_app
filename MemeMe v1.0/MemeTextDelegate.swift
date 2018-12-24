@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MemeTextDelegate : NSObject, UITextFieldDelegate {
+extension ViewController : UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
@@ -20,6 +20,4 @@ class MemeTextDelegate : NSObject, UITextFieldDelegate {
         textField.resignFirstResponder();
         return true;
     }
-    
-    
 }

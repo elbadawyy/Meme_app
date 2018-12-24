@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageViewId" translatesAutoresizingMaskIntoConstraints="NO" id="qHO-6x-cAu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageViewId" translatesAutoresizingMaskIntoConstraints="NO" id="qHO-6x-cAu">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FH7-Ew-gut">
@@ -34,20 +34,20 @@
                                             <action selector="pickFromCamera:" destination="BYZ-38-t0r" id="hec-63-yFD"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Share" id="9it-jx-wty">
+                                    <barButtonItem systemItem="action" id="9it-jx-wty">
                                         <connections>
                                             <action selector="saveMemeImage:" destination="BYZ-38-t0r" id="1SX-mV-dh4"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3on-lq-DXc">
-                                <rect key="frame" x="40" y="502" width="295" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3on-lq-DXc">
+                                <rect key="frame" x="40" y="536" width="295" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-zJ-MYN">
-                                <rect key="frame" x="40" y="115" width="295" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-zJ-MYN">
+                                <rect key="frame" x="40" y="90" width="295" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -58,7 +58,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qHO-6x-cAu" secondAttribute="bottom" id="8Cn-HY-SfU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3on-lq-DXc" secondAttribute="trailing" constant="40" id="KkL-ee-UB4"/>
                             <constraint firstItem="qHO-6x-cAu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Qld-oc-aYm"/>
-                            <constraint firstItem="FH7-Ew-gut" firstAttribute="top" secondItem="3on-lq-DXc" secondAttribute="bottom" constant="91" id="Snq-Mm-OTd"/>
+                            <constraint firstItem="FH7-Ew-gut" firstAttribute="top" secondItem="3on-lq-DXc" secondAttribute="bottom" constant="70" id="Snq-Mm-OTd"/>
                             <constraint firstItem="qHO-6x-cAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T0s-4D-0z5"/>
                             <constraint firstItem="3on-lq-DXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ZuU-Ya-hdl"/>
                             <constraint firstItem="qHO-6x-cAu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d6M-LR-TPM"/>
@@ -69,7 +69,7 @@
                             <constraint firstItem="FH7-Ew-gut" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tCE-i9-Efx"/>
                             <constraint firstItem="FH7-Ew-gut" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="teV-5l-b9D"/>
                             <constraint firstItem="eHp-zJ-MYN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="umA-lT-UdQ"/>
-                            <constraint firstItem="eHp-zJ-MYN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="zNi-Ip-HzP"/>
+                            <constraint firstItem="eHp-zJ-MYN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="zNi-Ip-HzP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
