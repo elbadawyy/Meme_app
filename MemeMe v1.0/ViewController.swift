@@ -8,12 +8,7 @@
 
 import UIKit
 
-struct Meme {
-    var topText:String
-    var bottomText:String
-    var originalImage:UIImage
-    var memedImage:UIImage
-}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
@@ -53,13 +48,14 @@ UINavigationControllerDelegate {
 
     func initTextField(text: String, textField: UITextField){
         textField.text = text
-        textField.textAlignment = .center
         textField.defaultTextAttributes = [
             .strokeWidth: -2.0,
             .strokeColor: UIColor.black,
             .foregroundColor: UIColor.white,
             .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!
         ]
+        textField.textAlignment = .center
+
     }
     
     @IBAction func pickImageFromAlbum(_ sender: Any) {
@@ -107,7 +103,9 @@ UINavigationControllerDelegate {
     
     @objc func keyboardWillShow(_ notification:Notification) {
         
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomTextfield.isEditing {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
