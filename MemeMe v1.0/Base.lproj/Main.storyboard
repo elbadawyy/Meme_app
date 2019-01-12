@@ -241,8 +241,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="cyY-cL-iTu" id="du6-kG-fPW"/>
-                                    <outlet property="delegate" destination="cyY-cL-iTu" id="yse-xk-G4x"/>
+                                    <outlet property="dataSource" destination="cyY-cL-iTu" id="pRd-vz-GDo"/>
+                                    <outlet property="delegate" destination="cyY-cL-iTu" id="Ka0-Ei-OgL"/>
                                 </connections>
                             </tableView>
                         </subviews>
