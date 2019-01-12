@@ -20,7 +20,6 @@ class MemesTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         super.viewWillAppear(animated)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        print(self.memes!.count)
         tableView.reloadData()
         
     }
@@ -37,7 +36,6 @@ class MemesTableVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         // Set the name and image
         cell.textLabel?.text = "\(meme!.topText) \(meme!.bottomText)"
         cell.imageView?.image = meme!.memedImage
-        print(cell.textLabel?.text! as Any)
         return cell
     }
     

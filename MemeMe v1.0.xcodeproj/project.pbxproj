@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1413782C21E6A24A0078D332 /* MemesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413782B21E6A24A0078D332 /* MemesTableVC.swift */; };
+		141524BB21EA9F1000A6AA70 /* MemesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141524BA21EA9F1000A6AA70 /* MemesCollectionVC.swift */; };
 		142D59F221D18986001484E8 /* MemeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142D59F121D18986001484E8 /* MemeStruct.swift */; };
 		148BC36F21CAD76F00A3EC87 /* MemeTextDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148BC36E21CAD76F00A3EC87 /* MemeTextDelegate.swift */; };
 		14D9E2D521C820CD0049A404 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D9E2D421C820CD0049A404 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		1413782B21E6A24A0078D332 /* MemesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesTableVC.swift; sourceTree = "<group>"; };
+		141524BA21EA9F1000A6AA70 /* MemesCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesCollectionVC.swift; sourceTree = "<group>"; };
 		142D59F121D18986001484E8 /* MemeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeStruct.swift; sourceTree = "<group>"; };
 		148BC36E21CAD76F00A3EC87 /* MemeTextDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTextDelegate.swift; sourceTree = "<group>"; };
 		14D9E2D121C820CD0049A404 /* MemeMe v1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MemeMe v1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +71,7 @@
 				14D9E2E021C820D00049A404 /* Info.plist */,
 				148BC36E21CAD76F00A3EC87 /* MemeTextDelegate.swift */,
 				142D59F121D18986001484E8 /* MemeStruct.swift */,
+				141524BA21EA9F1000A6AA70 /* MemesCollectionVC.swift */,
 			);
 			path = "MemeMe v1.0";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			files = (
 				142D59F221D18986001484E8 /* MemeStruct.swift in Sources */,
 				14D9E2D721C820CD0049A404 /* AddMemeViewController.swift in Sources */,
+				141524BB21EA9F1000A6AA70 /* MemesCollectionVC.swift in Sources */,
 				148BC36F21CAD76F00A3EC87 /* MemeTextDelegate.swift in Sources */,
 				1413782C21E6A24A0078D332 /* MemesTableVC.swift in Sources */,
 				14D9E2D521C820CD0049A404 /* AppDelegate.swift in Sources */,

@@ -136,22 +136,21 @@ UINavigationControllerDelegate {
     
     @IBAction func saveMemeImage(_ sender: Any) {
         let memedImage=generateMemedImage()
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
-        // Add it to the memes array in the Application Delegate
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
-        
-        let controller = UIActivityViewController(activityItems: [meme] , applicationActivities: nil)
+        let controller = UIActivityViewController(activityItems: [memedImage],
+                                                  applicationActivities: nil)
         controller.completionWithItemsHandler = {
-            (activity, success, items, error) in
-            if(success && error == nil){
-                self.dismiss(animated: true, completion: nil);
+            (_, completed, _, _) in
+            if completed {
+                let meme = Meme(topText: self.topTextField.text!,
+                                bottomText: self.bottomTextfield.text!,
+                                originalImage: self.imageView.image!,
+                                memedImage: memedImage)
+                // Add it to the memes array in the Application Delegate
+                let object = UIApplication.shared.delegate
+                let appDelegate = object as! AppDelegate
+                appDelegate.memes.append(meme)
             }
-            else if (error != nil){
-                print(error?.localizedDescription ?? "Error Happened !!")
-            }
-        };
+        }
         present(controller,animated: true,completion: nil)
     }
     
