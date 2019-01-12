@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,
+class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
     @IBOutlet weak var toolBar: UIToolbar!
@@ -27,7 +27,6 @@ UINavigationControllerDelegate {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         topTextField.delegate = self
         bottomTextfield.delegate = self
-        
         initTextField(text: "TOP", textField: topTextField)
         initTextField(text: "BOTTOM", textField: bottomTextfield)
         // Do any additional setup after loading the view, typically from a nib.
@@ -138,6 +137,10 @@ UINavigationControllerDelegate {
     @IBAction func saveMemeImage(_ sender: Any) {
         let memedImage=generateMemedImage()
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, originalImage: imageView.image!, memedImage: memedImage)
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
         
         let controller = UIActivityViewController(activityItems: [meme] , applicationActivities: nil)
         controller.completionWithItemsHandler = {
@@ -151,6 +154,17 @@ UINavigationControllerDelegate {
         };
         present(controller,animated: true,completion: nil)
     }
+    
+    @IBAction func cancelAddMeme(_ sender: Any) {
+        let memedImage=generateMemedImage()
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, originalImage: UIImage(), memedImage: memedImage)
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 
