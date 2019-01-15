@@ -70,21 +70,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-ol-eeG">
-                                                    <rect key="frame" x="0.0" y="40" width="100" height="59"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="rkA-mU-TXd"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-bf-Tkj">
-                                                    <rect key="frame" x="0.0" y="12" width="100" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaQ-bf-Tkj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="32"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-ol-eeG">
+                                                    <rect key="frame" x="0.0" y="40" width="100" height="59"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="59" id="D6d-Mn-Ebc"/>
+                                                        <constraint firstAttribute="width" constant="100" id="rkA-mU-TXd"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="zaQ-bf-Tkj" firstAttribute="leading" secondItem="xCm-qS-JzS" secondAttribute="leading" id="9lS-xI-wMH"/>
+                                            <constraint firstAttribute="bottom" secondItem="bNb-ol-eeG" secondAttribute="bottom" id="FEm-sz-uVt"/>
+                                            <constraint firstItem="bNb-ol-eeG" firstAttribute="trailing" secondItem="zaQ-bf-Tkj" secondAttribute="trailing" id="TCB-pL-09A"/>
+                                            <constraint firstItem="bNb-ol-eeG" firstAttribute="top" secondItem="zaQ-bf-Tkj" secondAttribute="bottom" constant="8" id="f6F-6f-7eM"/>
+                                            <constraint firstItem="zaQ-bf-Tkj" firstAttribute="top" secondItem="xCm-qS-JzS" secondAttribute="top" id="nDG-Uc-IEe"/>
+                                            <constraint firstItem="bNb-ol-eeG" firstAttribute="leading" secondItem="xCm-qS-JzS" secondAttribute="leading" id="tbt-e7-MzC"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zaQ-bf-Tkj" secondAttribute="trailing" symbolic="YES" id="w2O-qD-d9j"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="memeImageView" destination="bNb-ol-eeG" id="xdM-S4-RhN"/>
                                             <outlet property="memeLabel" destination="zaQ-bf-Tkj" id="7nU-PZ-A0W"/>
