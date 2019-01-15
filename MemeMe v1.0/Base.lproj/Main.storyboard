@@ -110,7 +110,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nhF-8d-d02"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="6bm-Jo-U2q">
+                    <navigationItem key="navigationItem" title="Memes Grid" id="6bm-Jo-U2q">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6BY-rJ-YL2">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="DVW-Bj-PId"/>
