@@ -6,7 +6,6 @@
 //  Copyright © 2019 Muhammad El-Badawy. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class MemesCollectionVC: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource {
@@ -17,7 +16,7 @@ class MemesCollectionVC: UIViewController,UICollectionViewDelegate,UICollectionV
     var memes: [Meme]?
     
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
@@ -26,18 +25,28 @@ class MemesCollectionVC: UIViewController,UICollectionViewDelegate,UICollectionV
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.memes!.count
+       
+        return memes!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as! MemeCollectionViewCell
         let meme = memes![indexPath.row]
         
-        // Set the image
-//        cell.memeImageView?.image = meme.memedImage
+        // Set the name and image
+        cell.memeLabel.text = "\(meme.topText) \(meme.bottomText)"
+        cell.memeImageView?.image = meme.memedImage
         
         return cell
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeImageVC") as! MemeImageVC
+        detailController.meme = self.memes![(indexPath as NSIndexPath).row]
+        self.navigationController!.pushViewController(detailController, animated: true)
     }
     
     

@@ -155,12 +155,6 @@ UINavigationControllerDelegate {
     }
     
     @IBAction func cancelAddMeme(_ sender: Any) {
-        let memedImage=generateMemedImage()
-        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextfield.text!, originalImage: UIImage(), memedImage: memedImage)
-        // Add it to the memes array in the Application Delegate
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
         self.dismiss(animated: true, completion: nil)
     }
     
