@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1410C33221EFAEA50056EB6B /* MemesSingletonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1410C33121EFAEA50056EB6B /* MemesSingletonClass.swift */; };
 		1413782C21E6A24A0078D332 /* MemesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1413782B21E6A24A0078D332 /* MemesTableVC.swift */; };
 		141524BB21EA9F1000A6AA70 /* MemesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141524BA21EA9F1000A6AA70 /* MemesCollectionVC.swift */; };
 		141524BD21EAA77600A6AA70 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141524BC21EAA77600A6AA70 /* MemeCollectionViewCell.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1410C33121EFAEA50056EB6B /* MemesSingletonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesSingletonClass.swift; sourceTree = "<group>"; };
 		1413782B21E6A24A0078D332 /* MemesTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesTableVC.swift; sourceTree = "<group>"; };
 		141524BA21EA9F1000A6AA70 /* MemesCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemesCollectionVC.swift; sourceTree = "<group>"; };
 		141524BC21EAA77600A6AA70 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				142D59F121D18986001484E8 /* MemeStruct.swift */,
 				141524BA21EA9F1000A6AA70 /* MemesCollectionVC.swift */,
 				141524BC21EAA77600A6AA70 /* MemeCollectionViewCell.swift */,
+				1410C33121EFAEA50056EB6B /* MemesSingletonClass.swift */,
 			);
 			path = "MemeMe v1.0";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1410C33221EFAEA50056EB6B /* MemesSingletonClass.swift in Sources */,
 				142D59F221D18986001484E8 /* MemeStruct.swift in Sources */,
 				14D9E2D721C820CD0049A404 /* AddMemeViewController.swift in Sources */,
 				141524BB21EA9F1000A6AA70 /* MemesCollectionVC.swift in Sources */,

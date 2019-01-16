@@ -142,7 +142,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="imageViewId" translatesAutoresizingMaskIntoConstraints="NO" id="qHO-6x-cAu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="imageViewId" translatesAutoresizingMaskIntoConstraints="NO" id="qHO-6x-cAu">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FH7-Ew-gut">
@@ -200,6 +200,7 @@
                             <constraint firstItem="FH7-Ew-gut" firstAttribute="top" secondItem="3on-lq-DXc" secondAttribute="bottom" constant="70" id="Snq-Mm-OTd"/>
                             <constraint firstItem="qHO-6x-cAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T0s-4D-0z5"/>
                             <constraint firstItem="3on-lq-DXc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ZuU-Ya-hdl"/>
+                            <constraint firstItem="qHO-6x-cAu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="b6v-CY-1s3"/>
                             <constraint firstItem="qHO-6x-cAu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d6M-LR-TPM"/>
                             <constraint firstItem="4oI-xX-TcM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fyz-cZ-4IN"/>
                             <constraint firstItem="4oI-xX-TcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jql-hC-zhR"/>
@@ -236,16 +237,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s3i-iP-2AH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s3i-iP-2AH">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="s3i-iP-2AH" firstAttribute="leading" secondItem="ZET-aK-5Cp" secondAttribute="leading" id="4sL-iS-RrE"/>
                             <constraint firstItem="ZET-aK-5Cp" firstAttribute="bottom" secondItem="s3i-iP-2AH" secondAttribute="bottom" id="7Fn-Bk-8ER"/>
+                            <constraint firstItem="s3i-iP-2AH" firstAttribute="bottom" secondItem="ZET-aK-5Cp" secondAttribute="bottom" id="C7K-DD-t78"/>
                             <constraint firstItem="s3i-iP-2AH" firstAttribute="leading" secondItem="ZET-aK-5Cp" secondAttribute="leading" id="E2e-qi-gqO"/>
                             <constraint firstItem="ZET-aK-5Cp" firstAttribute="trailing" secondItem="s3i-iP-2AH" secondAttribute="trailing" id="fTE-qu-FmK"/>
                             <constraint firstItem="s3i-iP-2AH" firstAttribute="top" secondItem="ZET-aK-5Cp" secondAttribute="top" id="nJQ-qK-UF2"/>
+                            <constraint firstItem="s3i-iP-2AH" firstAttribute="trailing" secondItem="ZET-aK-5Cp" secondAttribute="trailing" id="plv-Oj-ATk"/>
+                            <constraint firstItem="s3i-iP-2AH" firstAttribute="top" secondItem="ZET-aK-5Cp" secondAttribute="top" id="vee-Hi-mSM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZET-aK-5Cp"/>
                     </view>

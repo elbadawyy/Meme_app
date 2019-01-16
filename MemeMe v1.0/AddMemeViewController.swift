@@ -145,10 +145,9 @@ UINavigationControllerDelegate {
                                 bottomText: self.bottomTextfield.text!,
                                 originalImage: self.imageView.image!,
                                 memedImage: memedImage)
-                // Add it to the memes array in the Application Delegate
-                let object = UIApplication.shared.delegate
-                let appDelegate = object as! AppDelegate
-                appDelegate.memes.append(meme)
+                // Add it to the memes array in the Memes Singleton
+                SharedMemes.sharedInstance.memes.append(meme)
+               
             }
         }
         present(controller,animated: true,completion: nil)
